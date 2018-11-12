@@ -2,7 +2,8 @@
 /*
 * Plugin Name: Pertinent copyright (firstDateOfPost - LastDateOfPost)
 */
-function pertinent_copyright() {
+function pertinent_copyright()
+{
     global $wpdb;
     // look in db first & last posts
     $copyright_dates = $wpdb->get_results("
@@ -15,13 +16,13 @@ function pertinent_copyright() {
       post_status = 'publish'
     ");
     $output = '';
-    if($copyright_dates) {
-      $copyright = "&copy; " . $copyright_dates[0]->firstdate;
-      if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
-        $copyright .= '-' . $copyright_dates[0]->lastdate;
-      }
-      $output = $copyright;
+    if ($copyright_dates) {
+        $copyright = '&copy; '.$copyright_dates[0]->firstdate;
+        if ($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
+            $copyright .= '-'.$copyright_dates[0]->lastdate;
+        }
+        $output = $copyright;
     }
-    return $output;
-  }
 
+    return $output;
+}
