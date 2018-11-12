@@ -22,11 +22,13 @@ This section describes how to install the plugin and get it working.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 use
+```
 <?php 
 if (function_exists("pertinent_copyright"))
 { 
     echo pertinent_copyright(); 
 } ?>
+```
 
 Changelog
 ---------
